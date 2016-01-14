@@ -316,7 +316,15 @@ end
 
 ### Passenger
 
+Airbrake can report problems occurring during Phusion Passenger deploy failures
+(require Passenger 4 or greater). To integrate Airbrake with Passenger you don't
+have to do anything, but if it's not working out-of-box, then `require`
+our integration at the top of your `config.ru` file:
 
+```
+# config.ru
+require 'airbrake/passenger/load_shared_helpers_ext'
+```
 
 ### Plain Ruby scripts
 

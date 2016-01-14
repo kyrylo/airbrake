@@ -8,12 +8,10 @@ module PhusionPassenger
       exception = args.last
       return unless exception.is_a?(Exception)
 
-      params = {
-        component: "PhusionPassenger/#{PhusionPassenger::VERSION_STRING}",
-        args: args
-      }
+      params = args.first
+      params[:component] = "PhusionPassenger/#{params['passenger_version']}"
+      params[:action] = params['process_title']
       Airbrake.notify_sync(exception, params, :passenger)
-
     ensure
       about_to_abort_without_airbrake(*args)
     end

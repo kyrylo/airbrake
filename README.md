@@ -62,6 +62,7 @@ The list of integrations that are available in this gem includes:
   * DelayedJob<sup>[[link](#delayedjob)]</sup>
 * Other libraries
   * Rake<sup>[[link](#rake)]</sup>
+  * Phusion Passenger<sup>[[link](#passenger)]</sup>
 * Plain Ruby scripts<sup>[[link](#plain-ruby-scripts)]</sup>
 
 [Paying Airbrake plans][pricing] support the ability to track deployments of
@@ -312,6 +313,10 @@ task :foo do
   1/0
 end
 ```
+
+### Passenger
+
+
 
 ### Plain Ruby scripts
 

@@ -5,20 +5,17 @@ module PhusionPassenger
     alias_method :about_to_abort_without_airbrake, :about_to_abort
 
     def about_to_abort(*args)
-      puts 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-      puts args
-      p args
       exception = args.last
-
       return unless exception.is_a?(Exception)
 
       params = {
-        component: "PhusionPassenger/#{PhusionPassenger::VERSION_STRING}"
+        component: "PhusionPassenger/#{PhusionPassenger::VERSION_STRING}",
+        args: args
       }
       Airbrake.notify_sync(exception, params, :passenger)
 
     ensure
-      about_to_abort_without_notifier(*args)
+      about_to_abort_without_airbrake(*args)
     end
   end
 end

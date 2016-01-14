@@ -9,6 +9,8 @@ Airbrake Changelog
   OmniAuth support) ([#466](https://github.com/airbrake/airbrake/pull/466))
 * Fixed the Capistrano 2 integration, which was not working at all
   ([#475](https://github.com/airbrake/airbrake/pull/475))
+* Introduced the Passenger integration
+  ([#111](https://github.com/airbrake/airbrake/pull/11))
 
 ### [v5.0.2][v5.0.2] (January 3, 2015)
 

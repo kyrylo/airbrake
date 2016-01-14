@@ -321,7 +321,7 @@ Airbrake can report problems occurring during Phusion Passenger deploy failures
 have to do anything, but if it's not working out-of-box, then `require`
 our integration at the top of your `config.ru` file:
 
-```
+```ruby
 # config.ru
 require 'airbrake/passenger/load_shared_helpers_ext'
 ```

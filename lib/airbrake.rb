@@ -10,8 +10,6 @@ require 'airbrake-ruby'
 require 'airbrake/version'
 
 # Automatically load needed files for the environment the library is running in.
-require 'airbrake/passenger/integration' if defined?(PhusionPassenger)
-
 if defined?(Rack)
   require 'airbrake/rack/user'
   require 'airbrake/rack/notice_builder'
@@ -24,3 +22,4 @@ require 'airbrake/rake/task_ext' if defined?(Rake::Task)
 require 'airbrake/resque/failure' if defined?(Resque)
 require 'airbrake/sidekiq/error_handler' if defined?(Sidekiq)
 require 'airbrake/delayed_job/plugin' if defined?(Delayed)
+require 'airbrake/passenger/load_shared_helpers_ext' if defined?(PhusionPassenger)
